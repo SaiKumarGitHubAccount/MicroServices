@@ -1,0 +1,47 @@
+# Server configuration
+server:
+  port: 8081
+
+# Database configuration
+spring:
+  application:
+    name: POST-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/postdb
+    username: root
+    password: test
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  instance:
+    prefer-ip-address: true
+client:
+  fetch-registry: true
+  register-with-eureka: true
+  service-url:
+    default-Zone: http://localhost:8761/eureka
+
+
+
+## Logging configuration
+#logging:
+#  level:
+#    root: info
+#    com.example: debug
+#
+## Custom application properties
+#myapp:
+#  welcome-message: Hello, this is my application!
+#  feature-flag:
+#    new-feature: true
+#
+## External service configuration
+#external-service:
+#  api-key: my-api-key
+#  endpoint: https://api.example.com
